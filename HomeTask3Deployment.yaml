@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: home-task-3-deployment
+  labels:
+    app: home-task-3
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: home-task-3
+  template:
+    metadata:
+      labels:
+        app: home-task-3
+    spec:
+      containers:
+      - name: hometask2
+        image: kubik27/hometask2:20240104133810
+        ports:
+        - containerPort: 8000
